@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 31 (3001-3100) - 考研英语一·真题语境背单词</title>
+<style>:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #1e293b;
+  --sub: #64748b;
+  --border: #e2e8f0;
+  --momo: #10b981;
+  --momo-dark: #059669;
+  --momo-soft: #d1fae5;
+  --amber: #f59e0b;
+  --amber-soft: #fef3c7;
+  --rose: #f43f5e;
+  --rose-soft: #ffe4e6;
+  --mark-text: #d92d20;
+  --mark-bg: #fee4e2;
+  --shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06);
+}
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f1f5f9;
+  --sub: #94a3b8;
+  --border: #334155;
+  --momo: #10b981;
+  --momo-dark: #34d399;
+  --momo-soft: rgba(16, 185, 129, 0.18);
+  --amber-soft: rgba(245, 158, 11, 0.18);
+  --rose-soft: rgba(244, 63, 94, 0.18);
+  --mark-text: #fda29b;
+  --mark-bg: rgba(240, 68, 56, 0.25);
+  --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s, color 0.2s;
+}
+a { color: inherit; text-decoration: none; }
+button, select, input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+.topbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; }
+.badge-momo {
+  background: var(--momo);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.nav-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.btn-chip {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-chip:hover { border-color: var(--momo); color: var(--momo); }
+.btn-chip.active { background: var(--momo); color: #fff; border-color: var(--momo); }
+.btn-chip.btn-momo { background: var(--momo); color: #fff; border-color: var(--momo); }
+.btn-chip.btn-momo:hover { background: var(--momo-dark); color: #fff; }
+.btn-chip.btn-amber { background: var(--amber); color: #fff; border-color: var(--amber); }
+.btn-chip.btn-rose { background: var(--rose); color: #fff; border-color: var(--rose); }
+.stats-bar {
+  max-width: 960px;
+  width: 100%;
+  margin: 14px auto 0;
+  padding: 0 16px;
+}
+.progress-track {
+  height: 8px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 10px;
+}
+.prog-seg { height: 100%; transition: width 0.3s ease; }
+.prog-k { background: var(--momo); }
+.prog-v { background: var(--amber); }
+.prog-u { background: var(--rose); }
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--sub);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.pill {
+  padding: 4px 11px;
+  border-radius: 99px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--sub);
+  transition: all 0.15s;
+}
+.pill.active { font-weight: 700; color: var(--text); border-color: var(--momo); background: var(--momo-soft); }
+.batch-toolbar {
+  margin-top: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 220px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+.search-box input {
+  width: 100%;
+  font-size: 13px;
+  color: var(--text);
+}
+.batch-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: 12px auto 100px;
+  padding: 0 16px;
+  flex: 1;
+}
+.momo-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+.word-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+}
+.word-title-wrap { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.word-title {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  cursor: pointer;
+}
+.word-title.masked {
+  filter: blur(10px);
+  user-select: none;
+}
+.speak-btn {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--momo-soft);
+  color: var(--momo-dark);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.meta-badges { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.freq-badge {
+  background: var(--rose-soft);
+  color: var(--rose);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.st-1 { background: var(--momo-soft); color: var(--momo-dark); }
+.st-2 { background: var(--amber-soft); color: var(--amber); }
+.st-3 { background: var(--rose-soft); color: var(--rose); }
+.morph-box {
+  background: var(--bg);
+  border-left: 4px solid var(--momo);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.morph-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--momo-dark);
+  background: var(--momo-soft);
+  padding: 2px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.sense-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+.sense-item:hover { border-color: var(--momo); }
+.en-sent {
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.en-sent mark, .zh-sent mark {
+  background: var(--mark-bg);
+  color: var(--mark-text);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.cloze-mode .en-sent mark {
+  color: transparent !important;
+  background: var(--border) !important;
+  border-bottom: 2px solid var(--momo);
+  padding: 0 18px;
+  cursor: pointer;
+}
+.reveal-box {
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+  margin-top: 8px;
+  transition: opacity 0.2s, filter 0.2s;
+}
+.hidden-meaning .reveal-box, .hidden-meaning .morph-box {
+  filter: blur(8px);
+  opacity: 0.28;
+  user-select: none;
+  cursor: pointer;
+}
+.sense-def {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--mark-text);
+  background: var(--mark-bg);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+.zh-sent {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.src-tag {
+  font-size: 12px;
+  color: var(--sub);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.speak-sent {
+  cursor: pointer;
+  color: var(--momo-dark);
+  font-weight: 600;
+  font-size: 12px;
+}
+.dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 12px 16px;
+  z-index: 60;
+  box-shadow: 0 -8px 25px rgba(0,0,0,0.05);
+}
+.dock-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+.btn-act {
+  padding: 12px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: transform 0.1s, opacity 0.15s;
+}
+.btn-act:active { transform: scale(0.97); }
+.btn-act small { font-size: 11px; font-weight: 500; opacity: 0.85; }
+.act-k { background: var(--momo); color: #fff; }
+.act-v { background: var(--amber); color: #fff; }
+.act-u { background: var(--rose); color: #fff; }
+.act-nav {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+.list-grid { display: flex; flex-direction: column; gap: 14px; }
+.list-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  transition: border-color 0.15s;
+}
+.list-card.selected-row { border-color: var(--momo); box-shadow: 0 0 0 2px var(--momo-soft); }
+/* 紧凑速查表（一键勾选/标熟） */
+.quick-table-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.quick-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.quick-table th, .quick-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+.quick-table th {
+  background: var(--bg);
+  font-size: 12px;
+  color: var(--sub);
+  font-weight: 700;
+}
+.quick-table tr:hover { background: var(--bg); }
+.quick-table tr.selected-row { background: var(--momo-soft); }
+.chk-box {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--momo);
+  cursor: pointer;
+}
+.toast {
+  position: fixed;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 200;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.toast.show { opacity: 1; }
+.kbd-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--sub);
+  margin-top: 12px;
+}
+@media (max-width: 640px) {
+  .word-title { font-size: 26px; }
+  .en-sent { font-size: 15.5px; }
+  .dock-inner { grid-template-columns: 1fr 1fr 1fr; }
+  .act-nav { display: none; }
+  .hide-sm { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <a href="index.html" class="badge-momo">🏠 总目录</a>
+    <span>Unit 31 · 第 3001-3100 词</span>
+    <span style="font-size:12px;color:var(--sub);font-weight:500;">(考频 1~1 次)</span>
+  </div>
+  <div class="nav-controls">
+    <a class="btn-chip" href="Unit_30_2901-3000.html">◀ 上一单元</a>
+    <select class="btn-chip" onchange="if(this.value) location.href=this.value"><option value="Unit_01_0001-0100.html" >Unit 01 (1-100 · 考频168-27)</option>
+<option value="Unit_02_0101-0200.html" >Unit 02 (101-200 · 考频27-19)</option>
+<option value="Unit_03_0201-0300.html" >Unit 03 (201-300 · 考频19-15)</option>
+<option value="Unit_04_0301-0400.html" >Unit 04 (301-400 · 考频15-12)</option>
+<option value="Unit_05_0401-0500.html" >Unit 05 (401-500 · 考频12-10)</option>
+<option value="Unit_06_0501-0600.html" >Unit 06 (501-600 · 考频10-9)</option>
+<option value="Unit_07_0601-0700.html" >Unit 07 (601-700 · 考频9-7)</option>
+<option value="Unit_08_0701-0800.html" >Unit 08 (701-800 · 考频7-6)</option>
+<option value="Unit_09_0801-0900.html" >Unit 09 (801-900 · 考频6-6)</option>
+<option value="Unit_10_0901-1000.html" >Unit 10 (901-1000 · 考频6-5)</option>
+<option value="Unit_11_1001-1100.html" >Unit 11 (1001-1100 · 考频5-5)</option>
+<option value="Unit_12_1101-1200.html" >Unit 12 (1101-1200 · 考频5-4)</option>
+<option value="Unit_13_1201-1300.html" >Unit 13 (1201-1300 · 考频4-4)</option>
+<option value="Unit_14_1301-1400.html" >Unit 14 (1301-1400 · 考频4-4)</option>
+<option value="Unit_15_1401-1500.html" >Unit 15 (1401-1500 · 考频4-3)</option>
+<option value="Unit_16_1501-1600.html" >Unit 16 (1501-1600 · 考频3-3)</option>
+<option value="Unit_17_1601-1700.html" >Unit 17 (1601-1700 · 考频3-3)</option>
+<option value="Unit_18_1701-1800.html" >Unit 18 (1701-1800 · 考频3-2)</option>
+<option value="Unit_19_1801-1900.html" >Unit 19 (1801-1900 · 考频2-2)</option>
+<option value="Unit_20_1901-2000.html" >Unit 20 (1901-2000 · 考频2-2)</option>
+<option value="Unit_21_2001-2100.html" >Unit 21 (2001-2100 · 考频2-2)</option>
+<option value="Unit_22_2101-2200.html" >Unit 22 (2101-2200 · 考频2-2)</option>
+<option value="Unit_23_2201-2300.html" >Unit 23 (2201-2300 · 考频2-2)</option>
+<option value="Unit_24_2301-2400.html" >Unit 24 (2301-2400 · 考频2-1)</option>
+<option value="Unit_25_2401-2500.html" >Unit 25 (2401-2500 · 考频1-1)</option>
+<option value="Unit_26_2501-2600.html" >Unit 26 (2501-2600 · 考频1-1)</option>
+<option value="Unit_27_2601-2700.html" >Unit 27 (2601-2700 · 考频1-1)</option>
+<option value="Unit_28_2701-2800.html" >Unit 28 (2701-2800 · 考频1-1)</option>
+<option value="Unit_29_2801-2900.html" >Unit 29 (2801-2900 · 考频1-1)</option>
+<option value="Unit_30_2901-3000.html" >Unit 30 (2901-3000 · 考频1-1)</option>
+<option value="Unit_31_3001-3100.html" selected>Unit 31 (3001-3100 · 考频1-1)</option>
+<option value="Unit_32_3101-3200.html" >Unit 32 (3101-3200 · 考频1-1)</option>
+<option value="Unit_33_3201-3263.html" >Unit 33 (3201-3263 · 考频1-1)</option></select>
+    <a class="btn-chip" href="Unit_32_3101-3200.html">下一单元 ▶</a>
+    <button id="mode-ctx" class="btn-chip active" onclick="setMode('context')">🎯 墨墨语境卡</button>
+    <button id="mode-tbl" class="btn-chip" onclick="setMode('table')">⚡ 极速词表(批量标熟)</button>
+    <button id="mode-lst" class="btn-chip" onclick="setMode('list')">📋 语境详表</button>
+    <button id="btn-cloze" class="btn-chip" onclick="toggleCloze()">🔍 挖空</button>
+    <button class="btn-chip" onclick="shuffleWords()">🔀 乱序</button>
+    <button class="btn-chip" onclick="toggleTheme()">🌓</button>
+  </div>
+</header>
+
+<section class="stats-bar">
+  <div class="progress-track">
+    <div id="prog-k" class="prog-seg prog-k" style="width:0%"></div>
+    <div id="prog-v" class="prog-seg prog-v" style="width:0%"></div>
+    <div id="prog-u" class="prog-seg prog-u" style="width:0%"></div>
+  </div>
+  <div class="stats-row">
+    <div class="filter-pills">
+      <button class="pill active" data-filter="all" onclick="applyFilter('all')">全部 (<span id="cnt-all">0</span>)</button>
+      <button class="pill" data-filter="0" onclick="applyFilter('0')">待学习 (<span id="cnt-0">0</span>)</button>
+      <button class="pill" data-filter="1" onclick="applyFilter('1')">✓ 已标熟 (<span id="cnt-1">0</span>)</button>
+      <button class="pill" data-filter="2" onclick="applyFilter('2')">? 模糊 (<span id="cnt-2">0</span>)</button>
+      <button class="pill" data-filter="3" onclick="applyFilter('3')">✗ 不认识 (<span id="cnt-3">0</span>)</button>
+      <button class="pill" data-filter="review" onclick="applyFilter('review')">🔥 重点复习(模糊+不熟)</button>
+    </div>
+  </div>
+
+  <!-- 列表搜索 + 批量勾选/一键标熟工具栏 -->
+  <div class="batch-toolbar">
+    <div class="search-box">
+      <span>🔍</span>
+      <input id="search-input" type="text" placeholder="输入单词 / 中文释义 / 构词 / 例句关键词，实时过滤列表..." oninput="onSearchInput()">
+      <button style="cursor:pointer;font-size:12px;color:var(--sub);" onclick="document.getElementById('search-input').value='';render();">清空</button>
+    </div>
+    <div class="batch-actions">
+      <button class="btn-chip" onclick="selectAllVisible()">☑️ 全选</button>
+      <button class="btn-chip" onclick="invertSelectVisible()">🔄 反选</button>
+      <button class="btn-chip btn-momo" onclick="markSelected(1)" title="若有勾选则标熟勾选词；若未勾选则将当前筛选/搜索出的全部词一键标熟">✅ 一键标熟 (<span id="sel-cnt">0</span>)</button>
+      <button class="btn-chip btn-amber" onclick="markSelected(2)">? 标模糊</button>
+      <button class="btn-chip btn-rose" onclick="markSelected(3)">✗ 标不熟</button>
+      <button class="btn-chip" onclick="markRestUnlearnedAsKnown()" title="先挑出不认识的标为生词，再点此按钮把剩余待学习词一键全部标熟！">⚡ 剩余未学全部标熟</button>
+      <button class="btn-chip" onclick="markSelected(0)">↺ 重置</button>
+    </div>
+  </div>
+</section>
+
+<main class="container" id="main-view"></main>
+
+<footer class="dock" id="bottom-dock">
+  <div class="dock-inner">
+    <button class="act-nav" onclick="prevWord()">◀ 上一词</button>
+    <button class="btn-act act-k" onclick="if(getVisibleList().length) setStatus(getVisibleList()[curIdx].id, 1, true)">
+      <span>✓ 认识 / 一键标熟</span><small>快捷键 [1] · 掌握直接过</small>
+    </button>
+    <button class="btn-act act-v" onclick="if(getVisibleList().length) setStatus(getVisibleList()[curIdx].id, 2, true)">
+      <span>? 模糊 / 有印象</span><small>快捷键 [2] · 结合语境加深</small>
+    </button>
+    <button class="btn-act act-u" onclick="if(getVisibleList().length) setStatus(getVisibleList()[curIdx].id, 3, true)">
+      <span>✗ 不认识 / 忘光</span><small>快捷键 [3] · 加入重点复习</small>
+    </button>
+    <button class="act-nav" onclick="nextWord()">下一词 ▶</button>
+  </div>
+</footer>
+
+<script>
+const UNIT_NO = 31;
+const WORDS = [{"id": 3001, "w": "predator", "f": 1, "m": "predat-（捕获、掠夺）+-or（执行这种动作的对象）", "s": [{"d": "1. n. 捕食者（1）", "e": "It is only in recent years that we hear the more honest argument that <mark>predators</mark> are members of the community, and that no special interest has the right to exterminate them for the sake of benefit, real or fancied, to itself.", "z": "直到近些年，我们才听到一种更加诚实的论点：<mark>捕食者</mark>也是这个群体的成员，任何特殊利益集团都无权为了自身真实或想象中的利益而将它们灭绝。", "r": "2010 · 英语一 · 阅读理解 C · 第 48 题"}]}, {"id": 3002, "w": "prehistoric", "f": 1, "m": "pre-（在……之前）+historic（有文字记载的历史的）", "s": [{"d": "1. adj. 史前的（1）", "e": "<mark>Prehistoric</mark> humans may have tamed donkeys to help navigate the expanding Sahara.", "z": "<mark>史前</mark>人类可能驯化了驴，以帮助他们穿越不断扩大的撒哈拉沙漠。", "r": "2026 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3003, "w": "preliminary", "f": 1, "m": "pre-（在前）+limin（门槛、界限）+-ary（相应性质的）", "s": [{"d": "1. adj. 初步的（1）", "e": "Its lawmakers gave <mark>preliminary</mark> approval last week to a law that would make it a crime to employ ultra-thin models on runways.", "z": "该国立法者上周<mark>初步</mark>批准了一项法律，将雇用极瘦模特走秀定为犯罪。", "r": "2016 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3004, "w": "premium", "f": 1, "m": "pre-（在先）+em（拿取）+-ium（事物）", "s": [{"d": "1. n. 保险费（1）", "e": "Insurance companies, meanwhile, can base their <mark>premiums</mark> on AI models that more accurately assess risk.", "z": "与此同时，保险公司可以依据能更准确地评估风险的人工智能模型来厘定<mark>保费</mark>。", "r": "2021 · 英语一 · 阅读理解 B · 第 43 题"}]}, {"id": 3005, "w": "prepared", "f": 1, "m": "prepar（prepare去e，准备、安排）+ed（已经形成的状态）", "s": [{"d": "1. adj. 愿意的；有意的（1）", "e": "Therefore, unless customers are <mark>prepared</mark> to sign release agreements, the use of AI may become somewhat restricted in the future.", "z": "因此，除非客户<mark>愿意</mark>签署使用授权协议，否则未来人工智能的使用可能会受到一定限制。", "r": "2023 · 英语一 · 阅读理解 C · 第 49、50 题"}]}, {"id": 3006, "w": "prescription", "f": 1, "m": "pre-（预先）+script（写、书写）+-ion（写下结果的名词后缀）", "s": [{"d": "1. n. 处方；建议方案（生活方式干扰项）（1）", "e": "[ D ] <mark>prescription</mark>", "z": "[D] <mark>处方</mark>", "r": "2021 · 英语一 · 完形填空 · 第 20 题 · 选项 D · 真题选项"}]}, {"id": 3007, "w": "presentation", "f": 1, "m": "present（展示、呈现、介绍）+-ation（行为、过程或活动）", "s": [{"d": "1. n. 呈现、展示（1）", "e": "As summarized in a recent post on &quot;The Hidden Dangers of Online Beauty Filters&quot;, __17__ on this technology for social <mark>presentation</mark> can cause harm __18__ body image issues, lower self-esteem, and social anxiety.", "z": "正如最近一篇《网络美颜滤镜的隐患》帖子所总结的，____这种技术来进行社交<mark>展示</mark>，可能造成伤害，____身体形象问题、自尊降低和社交焦虑。", "r": "2026 · 英语一 · 完形填空 · 第 1-20 题 · 完形原文"}]}, {"id": 3008, "w": "prestigious", "f": 1, "m": "prestige（去e，声望、威信）+-ious（具有相应性质的）", "s": [{"d": "1. adj. 有声望的；受尊敬的（1）", "e": "Some might see the proposal as a booby prize for the fact that Britain is no longer able to apply for the much more <mark>prestigious</mark> title of European capital of culture, a sought-after award bagged by Glasgow in 1990 and Liverpool in 2008.", "z": "一些人可能认为，这项提议只是一个安慰奖，因为英国已无法再申请更<mark>具声望</mark>的“欧洲文化之都”称号；这一备受追捧的奖项曾分别于1990年和2008年由格拉斯哥和利物浦获得。", "r": "2020 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3009, "w": "presumably", "f": 1, "m": "presumable（可推测的，去le）+-ly（副词后缀）", "s": [{"d": "1. adv. 大概；据推测（1）", "e": "Free-ranging elephants <mark>presumably</mark> also use this information to locate their preferred food.", "z": "自由活动的大象<mark>大概</mark>也会利用这些信息，找到它们更喜欢的食物。", "r": "2024 · 英语一 · 阅读理解 C · 第 50 题"}]}, {"id": 3010, "w": "prevalent", "f": 1, "m": "pre-（在前）+val（强有力）+-ent（处在相应状态的）", "s": [{"d": "1. adj. 普遍的；盛行的（1）", "e": "[ B ] has helped explain certain <mark>prevalent</mark> trends.", "z": "[B] 有助于解释某些<mark>普遍</mark>存在的趋势。", "r": "2010 · 英语一 · 阅读理解 A Text 3 · 第 32 题 · 选项 B · 真题选项"}]}, {"id": 3011, "w": "prey", "f": 1, "m": "", "s": [{"d": "1. v. 捕食（prey on）（1）", "e": "(48) Time was when biologists somewhat overworked the evidence that these creatures preserve the health of game by killing the physically weak, or that they <mark>prey</mark> only on &quot;worthless&quot; species.", "z": "（48）曾有一段时期，生物学家有些过度利用这样的证据：这些生物通过捕杀身体虚弱的个体来维持猎物种群的健康，或者它们只<mark>捕食</mark>“毫无价值”的物种。", "r": "2010 · 英语一 · 阅读理解 C · 第 48 题"}]}, {"id": 3012, "w": "priest", "f": 1, "m": "", "s": [{"d": "1. n. 僧侣；宗教人员（1）", "e": "Buddhist <mark>priests</mark> offer a short sermon and __8__ prayers of blessing.", "z": "佛教<mark>僧侣</mark>作简短说法，并__8__祝福的祈祷。", "r": "2016 · 英语一 · 完形填空 · 第 1-20 题 · 完形原文"}]}, {"id": 3013, "w": "prince", "f": 1, "m": "princ（第一、居首）+e（词形结尾）", "s": [{"d": "1. n. 王子,国王（1）", "e": "<mark>Princes</mark> and princesses have day-jobs and ride bicycles, not horses (or helicopters).", "z": "<mark>王子</mark>和公主有日常工作，出行骑自行车，而不是骑马（或乘直升机）。", "r": "2015 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3014, "w": "princess", "f": 1, "m": "prince（王子、亲王，去掉末尾e）+-ess（女性身份）", "s": [{"d": "1. n. 公主（1）", "e": "Princes and <mark>princesses</mark> have day-jobs and ride bicycles, not horses (or helicopters).", "z": "王子和<mark>公主</mark>有日常工作，出行骑自行车，而不是骑马（或乘直升机）。", "r": "2015 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3015, "w": "probe", "f": 1, "m": "prob（检验、探查）+e（词形结尾）", "s": [{"d": "1. n. 调查；探查（1）", "e": "[ A ] adequately <mark>probe</mark> social and biological factors.", "z": "［A］充分<mark>探查</mark>社会与生物因素。", "r": "2012 · 英语一 · 阅读理解 A Text 1 · 第 23 题 · 选项 A · 真题选项 原表义项待核：本例中为动词“探查”。"}]}, {"id": 3016, "w": "proceed", "f": 1, "m": "pro-（向前）+ceed（走、前进）", "s": [{"d": "1. v. 继续进行（1）", "e": "How does your reading <mark>proceed</mark>?", "z": "你的阅读是如何<mark>进行</mark>的？", "r": "2015 · 英语一 · 阅读理解 B · 第 41 题"}]}, {"id": 3017, "w": "profile", "f": 1, "m": "pro-（向前）+fil（线）+e（词形结尾）", "s": [{"d": "1. n. 受关注程度（high-profile：引人注目的）（1）", "e": "The really successful holders of such titles are those that do a great deal more than fill hotel bedrooms and bring in high-<mark>profile</mark> arts events and good press for a year.", "z": "真正成功获得这类称号的地方，所做的远远不止于让酒店客房住满、举办<mark>备受瞩目</mark>的艺术活动，以及获得一年的正面媒体报道。", "r": "2020 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3018, "w": "programming", "f": 1, "m": "program（编程；双写m）+-ing（活动）", "s": [{"d": "1. n. 编程；程序设计（1）", "e": "And to anticipate every imaginable driving situation is a difficult <mark>programming</mark> problem.", "z": "而预料到每一种可以想象到的驾驶情况，是一个困难的<mark>编程</mark>问题。", "r": "2019 · 英语一 · 阅读理解 A Text 3 · 第 31-35 题"}]}, {"id": 3019, "w": "prohibit", "f": 1, "m": "pro-（在前面）+hibit（持有、拿住）", "s": [{"d": "1. v. 禁止，不允许（1）", "e": "[ D ] <mark>prohibit</mark> suspects from using their mobile phones.", "z": "［D］<mark>禁止</mark>嫌疑人使用手机。", "r": "2015 · 英语一 · 阅读理解 A Text 2 · 第 26 题 · 选项 D · 真题选项"}]}, {"id": 3020, "w": "prolong", "f": 1, "m": "pro-（向前）+long（长）", "s": [{"d": "1. v. 延长（1）", "e": "A federal appeals court weighed in again Tuesday, but instead of providing a badly needed resolution, it only <mark>prolonged</mark> the fight.", "z": "一家联邦上诉法院周二再次介入并发表意见，但它没有提供急需的解决办法，反而只是<mark>延长</mark>了这场争执。", "r": "2021 · 英语一 · 阅读理解 A Text 4 · 第 36-40 题"}]}, {"id": 3021, "w": "propaganda", "f": 1, "m": "", "s": [{"d": "1. n. (政治导向的)宣传（1）", "e": "Sadly, the spirit of inquiry once at home on campus has been replaced by the use of the humanities and social sciences as vehicles for publicizing &quot;progressive,&quot; or left-liberal <mark>propaganda</mark>.", "z": "遗憾的是，曾在校园中扎根的探究精神已被取代，人文学科和社会科学成了传播“进步主义”或左翼自由主义<mark>宣传</mark>的工具。", "r": "2014 · 英语一 · 阅读理解 A Text 4 · 第 36-40 题"}]}, {"id": 3022, "w": "propagate", "f": 1, "m": "propag（繁殖、延伸）+-ate（动词后缀）", "s": [{"d": "1. v. 传播、扩散（1）", "e": "If people in the network just two degrees removed from the initial influential prove resistant, for example, the cascade of change won&#x27;t <mark>propagate</mark> very far or affect many people.", "z": "例如，如果社交网络中与最初那位有影响力的人仅相隔两层关系的人就表现出抵制，那么这种变化的连锁效应便不会<mark>传播</mark>得很远，也不会影响很多人。", "r": "2010 · 英语一 · 阅读理解 A Text 3 · 第 31-35 题"}]}, {"id": 3023, "w": "propel", "f": 1, "m": "pro-（向前）+pel（推动）", "s": [{"d": "1. v. 推动（1）", "e": "For thousands of years, donkeys have been critical for <mark>propelling</mark> human civilizations forward.", "z": "数千年来，驴一直对<mark>推动</mark>人类文明向前发展至关重要。", "r": "2026 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3024, "w": "proportion", "f": 1, "m": "pro-（相对于、按相应关系）+portion（部分、一份）", "s": [{"d": "1. n. 比例；比率（1）", "e": "And third, growth was reflected in changes in the <mark>proportion</mark> of the relevant age group enrolled in institutions of higher education.", "z": "第三，增长还体现在相关年龄群体中进入高等院校学习的人口<mark>比例</mark>变化上。", "r": "2021 · 英语一 · 阅读理解 C · 第 48 题"}]}, {"id": 3025, "w": "prosecute", "f": 1, "m": "pro-（向前）+secut（跟随、追随）+e（拼写结尾）", "s": [{"d": "1. v. 起诉（1）", "e": "New research suggests that CSR may create monetary value for companies - at least when they are <mark>prosecuted</mark> for corruption.", "z": "新的研究表明，企业社会责任可能为企业创造货币价值，至少在它们因腐败而被<mark>起诉</mark>时如此。", "r": "2016 · 英语一 · 阅读理解 A Text 3 · 第 31-35 题"}]}, {"id": 3026, "w": "prosper", "f": 1, "m": "", "s": [{"d": "1. v. 兴旺；繁荣（1）", "e": "(48) But the professional companies <mark>prospered</mark> in their permanent theaters, and university men with literary ambitions were quick to turn to these theaters as offering a means of livelihood.", "z": "（48）但专业剧团在固定剧院里<mark>蓬勃发展</mark>，有文学抱负的大学人士很快就转向这些剧院，视其为谋生之道。", "r": "2018 · 英语一 · 阅读理解 C · 第 48、49 题"}]}, {"id": 3027, "w": "provided", "f": 1, "m": "provide（规定；提供，去e）+-ed（过去分词结尾，转作连词）", "s": [{"d": "1. conj. 只要；以……为条件（1）", "e": "[ C ] <mark>provided</mark>", "z": "[C] <mark>只要</mark>", "r": "2012 · 英语一 · 完形填空 · 第 11 题 · 选项 C · 真题选项"}]}, {"id": 3028, "w": "prudent", "f": 1, "m": "", "s": [{"d": "1. adj. 谨慎的、审慎的（1）", "e": "[ A ] Public-sector unions are <mark>prudent</mark> in taking actions.", "z": "[A] 公共部门工会在采取行动时很<mark>审慎</mark>。", "r": "2012 · 英语一 · 阅读理解 A Text 4 · 第 37 题 · 选项 A · 真题选项"}]}, {"id": 3029, "w": "pure", "f": 1, "m": "pur（纯净、洁净）+e（词形结尾）", "s": [{"d": "1. adj. 纯粹的（1）", "e": "The idea that &quot;housing crisis&quot; equals &quot;concreted meadows&quot; is <mark>pure</mark> lobby talk.", "z": "认为“住房危机”等于“给草地铺上混凝土”，<mark>纯粹</mark>是游说团体的一套说辞。", "r": "2016 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3030, "w": "purely", "f": 1, "m": "pure（保留末尾e，纯粹的、不掺杂其他因素的）+-ly（以这种方式）", "s": [{"d": "1. adv. 纯粹地；完全地（1）", "e": "Hence it is metaphysical; but the means of expression is <mark>purely</mark> and exclusively physical: sound.", "z": "因此，它是形而上的；但其表达手段却<mark>纯粹</mark>且仅仅是物质性的：声音。", "r": "2014 · 英语一 · 阅读理解 C · 第 46 题"}]}, {"id": 3031, "w": "quantitative", "f": 1, "m": "quantit-（quantity的词干，数量）+-ative（与……有关的）", "s": [{"d": "1. adj. 定量的；以数量衡量的（1）", "e": "Unfortunately, the long-term costs of using simple <mark>quantitative</mark> metrics to assess researcher merit are likely to be quite great.", "z": "不幸的是，用简单的<mark>定量</mark>指标评估研究人员的业绩，长期代价很可能相当高。", "r": "2019 · 英语一 · 阅读理解 C · 第 50 题"}]}, {"id": 3032, "w": "quantity", "f": 1, "m": "quant（多少、数量）+-ity（名词后缀）", "s": [{"d": "1. n. 数量；量（1）", "e": "(48) Attempts have been made to curb this tendency, for example, by trying to incorporate some measure of quality as well as <mark>quantity</mark> into the assessment of an applicant&#x27;s papers.", "z": "（48）人们已尝试遏制这一趋势，例如，在评估申请人的论文时，试图除了<mark>数量</mark>以外，也纳入某种质量衡量标准。", "r": "2019 · 英语一 · 阅读理解 C · 第 48、49 题"}]}, {"id": 3033, "w": "quiet", "f": 1, "m": "", "s": [{"d": "1. n. 安静（1）", "e": "[ A ] <mark>quieter</mark>.", "z": "[A] 更<mark>安静</mark>的。", "r": "2017 · 英语一 · 阅读理解 A Text 1 · 第 23 题 · 选项 A · 真题选项 原表义项待核：本例中为形容词比较级“更安静的”。"}]}, {"id": 3034, "w": "randomly", "f": 1, "m": "random（随机的）+-ly（副词后缀）", "s": [{"d": "1. adv. 随机地；任意地（1）", "e": "In theory, the __9__ of an applicant should not depend on the few others __10__ <mark>randomly</mark> for interview during the same day, but Dr Simonsohn suspected the truth was __11__ .", "z": "理论上，申请人的__9__不应取决于同一天<mark>随机</mark>__10__来面试的另外几个人，但西蒙松博士怀疑实际情况是__11__。", "r": "2013 · 英语一 · 完形填空 · 第 1-20 题 · 完形原文"}]}, {"id": 3035, "w": "rank", "f": 1, "m": "", "s": [{"d": "1. v. 排列；分等级（1）", "e": "[ C ] <mark>ranked</mark>", "z": "[C] <mark>排列</mark>了", "r": "2012 · 英语一 · 完形填空 · 第 17 题 · 选项 C · 真题选项"}]}, {"id": 3036, "w": "realm", "f": 1, "m": "", "s": [{"d": "1. n. 领域（1）", "e": "While future researchers may find the digital <mark>realm</mark> a challenging place to ply their trade, they won&#x27;t find it an impossible one.", "z": "虽然未来的研究人员可能发现，在数字<mark>领域</mark>从事自己的工作充满挑战，但他们不会觉得这完全不可能。", "r": "2025 · 英语一 · 阅读理解 A Text 4 · 第 36-40 题"}]}, {"id": 3037, "w": "receipt", "f": 1, "m": "re-（向自己这边）+ceipt（拿取、接到）", "s": [{"d": "1. n. 接受；收到（1）", "e": "In a recent study __5__ over 400 healthy adults, researchers from Carnegie Mellon University in Pennsylvania examined the effects of perceived social support and the <mark>receipt</mark> of hugs __6__ the participants&#x27; susceptibility to developing the common cold after being __7__ to the virus.", "z": "在最近一项____400多名健康成年人的研究中，宾夕法尼亚州卡内基梅隆大学的研究人员考察了感受到的社会支持和<mark>接受</mark>拥抱的情况，____参与者在____病毒之后患上普通感冒的易感性的影响。", "r": "2017 · 英语一 · 完形填空 · 第 1-20 题 · 完形原文"}]}, {"id": 3038, "w": "reception", "f": 1, "m": "re-（向自己这边）+cept（接收、拿取）+-ion（活动或结果的名词后缀）", "s": [{"d": "1. n. 接收；接受（1）", "e": "The networked computer is an amazing device, the first media machine that serves as the mode of production, means of distribution, site of <mark>reception</mark>, and place of praise and critique.", "z": "联网计算机是一种了不起的设备，它是首个兼作生产方式、传播手段、<mark>接收</mark>场所，以及赞扬和批评空间的媒体机器。", "r": "2012 · 英语一 · 阅读理解 B · 第 41-45 题"}]}, {"id": 3039, "w": "recession", "f": 1, "m": "re-（向后）+cess-（走）+-ion（过程、状态）", "s": [{"d": "1. n. 经济衰退（1）", "e": "Meanwhile, as the <mark>recession</mark> is looming large, people are getting anxious.", "z": "与此同时，随着<mark>经济衰退</mark>的阴影日益逼近，人们开始焦虑。", "r": "2010 · 英语一 · 阅读理解 B · 第 41-45 题 · 选项 A · 真题选项"}]}, {"id": 3040, "w": "recipe", "f": 1, "m": "re-（来）+cip（拿取）+e（本词的词形结尾）", "s": [{"d": "1. n. 方法；诀窍（1）", "e": "At a pinch, they might pick up a business book before a long flight, in the hope that, like a cookbook, it will provide a foolproof <mark>recipe</mark>.", "z": "实在没有办法时，他们可能会在长途飞行前随手买一本商业书，希望它像烹饪书一样，提供一个万无一失的<mark>诀窍</mark>。", "r": "2026 · 英语一 · 阅读理解 B · 第 41-45 题 · 选项 B · 真题选项"}]}, {"id": 3041, "w": "recite", "f": 1, "m": "re-（再次）+cit（唤起）+e（拼写结尾）", "s": [{"d": "1. v. 背诵、朗诵（1）", "e": "[ B ] <mark>recite</mark>", "z": "[B] <mark>背诵</mark>", "r": "2016 · 英语一 · 完形填空 · 第 8 题 · 选项 B · 真题选项"}]}, {"id": 3042, "w": "reclaim", "f": 1, "m": "re-（回、重新）+claim（提出要求）", "s": [{"d": "1. v. 收回；回收（1）", "e": "The idea that one might burn down an entire house just to <mark>reclaim</mark> the nails underlines how scarce, costly and valuable the simple-seeming technology was.", "z": "有人可能只为<mark>回收</mark>钉子而烧掉整栋房子，这一想法凸显出这种看似简单的技术当时是何等稀缺、昂贵而珍贵。", "r": "2024 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3043, "w": "recorder", "f": 1, "m": "record（记录、录音）+-er（执行的人或器具）", "s": [{"d": "1. n. 记录者（1）", "e": "Said one <mark>recorder</mark> of events, &quot;The air at twelve leagues&#x27; distance smelt as sweet as a new-blown garden.&quot;", "z": "一位事件<mark>记录者</mark>说：“十二里格以外的空气闻起来，也像刚刚盛开的花园一样芳香。”", "r": "2015 · 英语一 · 阅读理解 C · 第 50 题"}]}, {"id": 3044, "w": "rectangle", "f": 1, "m": "rect（直、正）+angle（角）", "s": [{"d": "1. n. 长方形、矩形（1）", "e": "Those pieces included small beds of roses and other items as well as a few dozen &quot;nature carpets&quot;-large <mark>rectangles</mark> decorated with foam pumpkins, cabbages, and watermelons.", "z": "那些作品包括小片玫瑰花坛及其他物品，还有几十块“自然地毯”，即用泡沫南瓜、卷心菜和西瓜装饰的大<mark>长方形</mark>。", "r": "2022 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3045, "w": "refrain", "f": 1, "m": "", "s": [{"d": "1. v. 克制；避免做（1）", "e": "California has asked the justices to <mark>refrain</mark> from a sweeping ruling, particularly one that upsets the old assumption that authorities may search through the possessions of suspects at the time of their arrest.", "z": "加利福尼亚州要求大法官们<mark>避免</mark>作出影响广泛的裁决，尤其不要推翻长期以来的一项假定，即当局可以在逮捕嫌疑人时搜查其随身物品。", "r": "2015 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3046, "w": "refresh", "f": 1, "m": "re-（重新）+fresh（新鲜的）", "s": [{"d": "1. v. 更新、使焕然一新（1）", "e": "Are you looking to <mark>refresh</mark> your image or pivot it?", "z": "你是想让自己的形象<mark>焕然一新</mark>，还是彻底改变形象？", "r": "2016 · 英语一 · 阅读理解 B · 第 41-45 题"}]}, {"id": 3047, "w": "refreshing", "f": 1, "m": "refresh（使清新、使恢复精神）+ing（具有这种作用的）", "s": [{"d": "1. adj. 使人神清气爽的（1）", "e": "It was specifically to provide city dwellers with spaces for leisure where they could experience &quot;a <mark>refreshing</mark> air.&quot;", "z": "其目的专门在于为城市居民提供休闲空间，让他们在那里感受“<mark>令人神清气爽</mark>的空气”。", "r": "2016 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3048, "w": "regain", "f": 1, "m": "re-（重新）+gain（获得）", "s": [{"d": "1. v. 重新获得（1）", "e": "Now, a new Web-based company has taken it a step __13__ and developed the first &quot;brain training program&quot; designed to actually help people improve and <mark>regain</mark> their mental __14__ .", "z": "如今，一家新兴互联网公司又向__13__迈进一步，开发出首个“脑力训练计划”，旨在真正帮助人们改善并<mark>重新获得</mark>其心智能__14__。", "r": "2014 · 英语一 · 完形填空 · 第 1-20 题 · 完形原文"}]}, {"id": 3049, "w": "regional", "f": 1, "m": "region（地区、区域）+-al（与之有关的）", "s": [{"d": "1. adj. 地区的；区域的（1）", "e": "[ B ] it will reduce <mark>regional</mark> inequality.", "z": "[B] 它将减少<mark>地区</mark>不平等。", "r": "2021 · 英语一 · 阅读理解 A Text 2 · 第 29 题 · 选项 B · 真题选项"}]}, {"id": 3050, "w": "regrettable", "f": 1, "m": "regret（遗憾，双写t）+-able（使人产生某种感受的）", "s": [{"d": "1. adj. 令人遗憾的（1）", "e": "[ C ] the <mark>regrettable</mark> decline of astronomy in ancient times.", "z": "[C] 古代天文学<mark>令人遗憾</mark>的衰落。", "r": "2017 · 英语一 · 阅读理解 A Text 2 · 第 26 题 · 选项 C · 真题选项"}]}, {"id": 3051, "w": "reign", "f": 1, "m": "", "s": [{"d": "1. v. 统治（1）", "e": "[ D ] ended his <mark>reign</mark> in embarrassment.", "z": "[D] 在尴尬中结束了他的<mark>统治</mark>。", "r": "2015 · 英语一 · 阅读理解 A Text 1 · 第 21 题 · 选项 D · 真题选项"}]}, {"id": 3052, "w": "rein", "f": 1, "m": "", "s": [{"d": "1. v. 控制、约束（rein in）（1）", "e": "At the end of 2018, Governor Charlie Baker of Massachusetts signed a bill to <mark>rein</mark> in those potential investor-buyers.", "z": "2018年底，马萨诸塞州州长查理·贝克签署了一项法案，以<mark>约束</mark>那些潜在的投资型买家。", "r": "2023 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3053, "w": "rejoice", "f": 1, "m": "", "s": [{"d": "1. v. 欣喜；高兴（1）", "e": "Sir John Reith said that it would end &quot;isolation of the spirit&quot; and <mark>rejoiced</mark>: &quot;It does not matter how many thousands may be listening, there is always enough for others…the genius and the fool, the wealthy and the poor listen simultaneously.&quot;", "z": "约翰·里斯爵士说，它将终结“精神的孤立”，并<mark>欣喜</mark>地表示：“无论有多少万人在收听，总有足够的空间让其他人加入……天才与愚人、富人与穷人，都在同时聆听。”", "r": "2026 · 英语一 · 阅读理解 A Text 3 · 第 31-35 题"}]}, {"id": 3054, "w": "relax", "f": 1, "m": "re-（重新、充分）+lax（放松、松开）", "s": [{"d": "1. v. 放松（1）", "e": "[ D ] <mark>relaxes</mark>", "z": "[D] <mark>放松</mark>", "r": "2011 · 英语一 · 完形填空 · 第 8 题 · 选项 D · 真题选项"}]}, {"id": 3055, "w": "relief", "f": 1, "m": "", "s": [{"d": "1. n. 宽慰；缓解（1）", "e": "To the anxious travelers the sight of the American shore brought almost inexpressible <mark>relief</mark>.", "z": "对焦虑的旅行者来说，看见美洲海岸带来了几乎难以言表的<mark>宽慰</mark>。", "r": "2015 · 英语一 · 阅读理解 C · 第 50 题"}]}, {"id": 3056, "w": "relish", "f": 1, "m": "", "s": [{"d": "1. v. 享受、欣赏（1）", "e": "[ E ] We are living through a golden age of science writing, so lucid and accessible that even lay readers can <mark>relish</mark> the unpredictability of discovery.", "z": "[E] 我们正生活在科学写作的黄金时代，作品清晰而通俗易懂，连外行读者也能<mark>欣赏</mark>科学发现的不可预测性。", "r": "2026 · 英语一 · 阅读理解 B · 第 41-45 题 · 选项 E · 真题选项"}]}, {"id": 3057, "w": "renewal", "f": 1, "m": "renew（更新、重新开始）+-al（行为、过程）", "s": [{"d": "1. n. 更新、改造（1）", "e": "Under lobby pressure, George Osborne favours rural new-build against urban renovation and <mark>renewal</mark>.", "z": "在游说压力之下，乔治·奥斯本倾向于支持乡村新建项目，而非城市翻新与<mark>改造</mark>。", "r": "2016 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3058, "w": "repeat", "f": 1, "m": "re-（再次）+peat（pet的历史变体，寻求）", "s": [{"d": "1. v. 重复、反复发生（1）", "e": "But when Swetnam enrolled in graduate school at the University of Arizona&#x27;s Laboratory of Tree-Ring Research, he was surprised to find a record of <mark>repeated</mark> blazes dating back hundreds of years before European colonists arrived on the continent.", "z": "但当斯韦特纳姆进入亚利桑那大学树轮研究实验室读研究生时，他惊讶地发现了<mark>反复发生</mark>火灾的记录，可追溯到欧洲殖民者抵达这片大陆之前数百年。", "r": "2026 · 英语一 · 阅读理解 A Text 4 · 第 36-40 题"}]}, {"id": 3059, "w": "repeatedly", "f": 1, "m": "repeat（重复）+ed（形成相应状态）+ly（副词后缀）", "s": [{"d": "1. adv. 反复地；一再（1）", "e": "Politicians have <mark>repeatedly</mark> &quot;backloaded&quot; public-sector pay deals, keeping the pay increases modest but adding to holidays and especially pensions that are already generous.", "z": "政界人士<mark>一再</mark>把公共部门薪酬协议的支出推迟到以后兑现，保持较小的工资涨幅，却增加休假，尤其是增加本已丰厚的养老金。", "r": "2012 · 英语一 · 阅读理解 A Text 4 · 第 36-40 题"}]}, {"id": 3060, "w": "repertoire", "f": 1, "m": "", "s": [{"d": "1. n. 演出曲目（1）", "e": "Merely expanding the orchestra&#x27;s <mark>repertoire</mark> will not be enough.", "z": "仅仅扩充管弦乐队的<mark>演出曲目</mark>还不够。", "r": "2011 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3061, "w": "resemblance", "f": 1, "m": "resembl-（resemble去e，相像）+-ance（名词后缀）", "s": [{"d": "1. n. 相似之处（1）", "e": "[ C ] <mark>resemblance</mark>", "z": "[C] <mark>相似之处</mark>。", "r": "2020 · 英语一 · 完形填空 · 第 15 题 · 选项 C · 真题选项"}]}, {"id": 3062, "w": "residence", "f": 1, "m": "resid-（reside去e，居住）+-ence（状态、处所）", "s": [{"d": "1. n. 住所（1）", "e": "[ D ] getting into one&#x27;s <mark>residence</mark>.", "z": "[D] 进入某人的<mark>住所</mark>。", "r": "2015 · 英语一 · 阅读理解 A Text 2 · 第 28 题 · 选项 D · 真题选项"}]}, {"id": 3063, "w": "resort", "f": 1, "m": "", "s": [{"d": "1. v. 诉诸、求助于（resort to）（1）", "e": "[ A ] <mark>resorts</mark>", "z": "[A] <mark>诉诸</mark>；<mark>求助于</mark>", "r": "2012 · 英语一 · 完形填空 · 第 7 题 · 选项 A · 真题选项"}]}, {"id": 3064, "w": "restrain", "f": 1, "m": "re-（再）+strain（拉紧）", "s": [{"d": "1. v. 约束（1）", "e": "In musical expression, he did not feel <mark>restrained</mark> by the weight of convention.", "z": "在音乐表达上，他并不觉得自己受到传统重压的<mark>束缚</mark>。", "r": "2014 · 英语一 · 阅读理解 C · 第 47 题"}]}, {"id": 3065, "w": "restraint", "f": 1, "m": "re-（再）+strain（拉紧）+t（名词词形结尾）", "s": [{"d": "1. n. 克制；约束（1）", "e": "[ A ] Imposing reasonable wage <mark>restraints</mark>.", "z": "[A] 实施合理的工资<mark>限制</mark>。", "r": "2022 · 英语一 · 阅读理解 A Text 4 · 第 38 题 · 选项 A · 真题选项"}]}, {"id": 3066, "w": "retention", "f": 1, "m": "re-（向后、留住）+tent-（持有、保持）+-ion（行为或状态）", "s": [{"d": "1. n. 留存（学生继续就读）（1）", "e": "For public institutions, state funds are sometimes tied partly to their success on metrics such as graduation rates and student <mark>retention</mark> - so better grades can, by boosting figures like those, mean more money.", "z": "对于公立院校而言，州政府拨款有时部分取决于毕业率和学生<mark>留存</mark>率等指标的表现，因此，更好的成绩可以通过提高这些指标，带来更多资金。", "r": "2019 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3067, "w": "retreat", "f": 1, "m": "re-（向后）+treat（拉；牵引，历史词干）", "s": [{"d": "1. n. 退却；衰退（1）", "e": "Moreover, the amateur tradition in music criticism has been in headlong <mark>retreat</mark>.", "z": "此外，音乐评论中的业余传统一直在迅速<mark>衰退</mark>。", "r": "2010 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3068, "w": "retrieve", "f": 1, "m": "re-（再次、回来）+triev（找到）+e（词形结尾）", "s": [{"d": "1. v. 检索；找回（1）", "e": "[ A ] the hazard of <mark>retrieving</mark> files through unusual means", "z": "[A] 通过不寻常手段<mark>找回</mark>文件的风险", "r": "2025 · 英语一 · 阅读理解 A Text 4 · 第 39 题 · 选项 A · 真题选项"}]}, {"id": 3069, "w": "retrospect", "f": 1, "m": "retro-（向后）+spect（看）", "s": [{"d": "1. n. 回顾（inretrospect：回想起来）（1）", "e": "[ C ] happiness in <mark>retrospect</mark>.", "z": "[C] <mark>回想起来</mark>的幸福。", "r": "2011 · 英语一 · 阅读理解 A Text 4 · 第 36 题 · 选项 C · 真题选项"}]}, {"id": 3070, "w": "reverse", "f": 1, "m": "re-（向后、返回）+vers（转）+e（拼写结尾）", "s": [{"d": "1. v. 扭转、逆转（1）", "e": "[ G ] The networked computer offers the first chance in 50 years to <mark>reverse</mark> the flow, to encourage thoughtful downloading and, even more importantly, meaningful uploading.", "z": "[G] 联网计算机提供了50年来第一次<mark>扭转</mark>信息流向的机会，鼓励人们深思熟虑地下载，更重要的是，有意义地上传。", "r": "2012 · 英语一 · 阅读理解 B · 第 41-45 题 · 选项 G · 真题选项"}]}, {"id": 3071, "w": "revolutionize", "f": 1, "m": "revolution（革命、根本变化）+ize（使发生相应变化）", "s": [{"d": "1. v. 彻底改变；使发生革命性剧变（1）", "e": "Protests have erupted over construction of the Thirty Meter Telescope (TMT), a giant observatory that promises to <mark>revolutionize</mark> humanity&#x27;s view of the cosmos.", "z": "围绕三十米望远镜（TMT）的建造已经爆发抗议；这个巨大的天文观测设施有望<mark>彻底改变</mark>人类对宇宙的认识。", "r": "2017 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3072, "w": "rewarding", "f": 1, "m": "reward（回报）+-ing（形容词后缀）", "s": [{"d": "1. adj. 有回报的；令人满足的（1）", "e": "[ D ] it is <mark>rewarding</mark> to double fire detection efforts.", "z": "[D] 加倍努力探测火灾是<mark>有回报</mark>的。", "r": "2026 · 英语一 · 阅读理解 A Text 4 · 第 40 题 · 选项 D · 真题选项"}]}, {"id": 3073, "w": "rob", "f": 1, "m": "", "s": [{"d": "1. v. 抢夺、剥夺（1）", "e": "Stealing artifacts from other peoples&#x27; cultures is obscene; it <mark>robs</mark> not only the physical objects, but the dignity and spirit of their creators.", "z": "盗取其他民族文化中的文物是可耻的；这不仅掠夺实物，也<mark>剥夺</mark>了创造者的尊严和精神。", "r": "2024 · 英语一 · 阅读理解 B · 第 41-45 题"}]}, {"id": 3074, "w": "robotics", "f": 1, "m": "robot（机器人）+-ics（学科、技术领域）", "s": [{"d": "1. n. 机器人学；机器人技术（1）", "e": "The team __16__ <mark>robotics</mark>, sonar mapping, and state-of-the-art graphics to survey the site.", "z": "该团队__16__<mark>机器人技术</mark>、声呐测绘和最先进的图像技术来勘察该遗址。", "r": "2025 · 英语一 · 完形填空 · 第 1-20 题 · 完形原文"}]}, {"id": 3075, "w": "rough", "f": 1, "m": "", "s": [{"d": "1. adj. 大致的；粗略的（1）", "e": "The <mark>rough</mark> guide to marketing success used to be that you got what you paid for.", "z": "过去，营销成功的<mark>大致</mark>准则是：一分钱一分货。", "r": "2011 · 英语一 · 阅读理解 A Text 3 · 第 31-35 题"}]}, {"id": 3076, "w": "rug", "f": 1, "m": "", "s": [{"d": "1. n. 地毯（1）", "e": "[ B ] Completed in 1875, the State Department&#x27;s south wing was the first to be occupied, with its elegant four-story library (completed in 1876), Diplomatic Reception Room, and Secretary&#x27;s office decorated with carved wood, Oriental <mark>rugs</mark>, and stenciled wall patterns.", "z": "[B] 国务院大楼南翼于1875年竣工，是最先投入使用的部分，其中有优雅的四层图书馆（1876年竣工）、外交接待室和国务卿办公室，内部以木雕、东方<mark>地毯</mark>和模板印制的墙面图案装饰。", "r": "2018 · 英语一 · 阅读理解 B · 第 41-45 题 · 选项 B · 真题选项"}]}, {"id": 3077, "w": "rumor", "f": 1, "m": "", "s": [{"d": "1. v. 传闻；据说（1）", "e": "__14__ , it was <mark>rumoured</mark> that smoking caused cancer for years before the evidence was found to prove a __15__ .", "z": "____，早在找到证据证明____之前多年，就已<mark>传闻</mark>吸烟会致癌。", "r": "2020 · 英语一 · 完形填空 · 第 1-20 题 · 完形原文"}]}, {"id": 3078, "w": "running", "f": 1, "m": "run（跑；运转；双写n）+-ing（活动或状态）", "s": [{"d": "1. adj. 持续的（long-running：长期持续的）（1）", "e": "This should form part of a wider package of measures to address the long-<mark>running</mark> problems on Britain&#x27;s railways.", "z": "这应当构成一套更广泛措施的一部分，以解决英国铁路<mark>长期持续</mark>存在的问题。", "r": "2021 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3079, "w": "rust", "f": 1, "m": "", "s": [{"d": "1. v. (使)生锈（1）", "e": "[ B ] keeping them from <mark>rusting</mark>", "z": "[B] 防止它们<mark>生锈</mark>。", "r": "2024 · 英语一 · 阅读理解 A Text 1 · 第 21 题 · 选项 B · 真题选项"}]}, {"id": 3080, "w": "safely", "f": 1, "m": "safe（安全的）+-ly（在这种情况下）", "s": [{"d": "1. adv. 安全地；平安地（1）", "e": "Pledging to run Pilgrim <mark>safely</mark>, the company has applied for federal permission to keep it open for another 20 years.", "z": "该公司承诺<mark>安全</mark>运营皮尔格里姆核电站，并已向联邦政府申请许可，以让其再运营20年。", "r": "2012 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3081, "w": "sail", "f": 1, "m": "", "s": [{"d": "1. v. 顺利通过（sailthrough）（1）", "e": "[ G ] The bill proved largely popular and <mark>sailed</mark> through Congress with large majorities in favor.", "z": "[G] 该法案获得了广泛欢迎，并以压倒性多数赞成票在国会<mark>顺利通过</mark>。", "r": "2023 · 英语一 · 阅读理解 B · 第 41-45 题 · 选项 G · 真题选项"}]}, {"id": 3082, "w": "sarcastic", "f": 1, "m": "sarcast-（sarcasm的词干形式，讽刺、挖苦）+-ic（具有这种性质的）", "s": [{"d": "1. adj. 讽刺的；挖苦的（1）", "e": "[ A ] <mark>sarcastic</mark>.", "z": "[A] <mark>挖苦</mark>的。", "r": "2017 · 英语一 · 阅读理解 A Text 4 · 第 40 题 · 选项 A · 真题选项"}]}, {"id": 3083, "w": "satire", "f": 1, "m": "", "s": [{"d": "1. n. 讽刺（1）", "e": "[ A ] <mark>Satire</mark> on an extravagant lifestyle.", "z": "[A] 对奢侈生活方式的<mark>讽刺</mark>。", "r": "2013 · 英语一 · 阅读理解 A Text 1 · 第 25 题 · 选项 A · 真题选项"}]}, {"id": 3084, "w": "satisfaction", "f": 1, "m": "satis（足够）+fact（做）+-ion（过程、状态或结果）", "s": [{"d": "1. n. 满意；满足（1）", "e": "[ A ] <mark>satisfaction</mark>.", "z": "[A] <mark>满意</mark>。", "r": "2010 · 英语一 · 阅读理解 A Text 4 · 第 40 题 · 选项 A · 真题选项"}]}, {"id": 3085, "w": "savings", "f": 1, "m": "saving（节省、节省下来的量）+-s（复数）", "s": [{"d": "1. n. 节省；节约的量（1）", "e": "Boiling down an individual&#x27;s output to simple metrics, such as number of publications or journal impacts, entails considerable <mark>savings</mark> in time, energy and ambiguity.", "z": "把一个人的产出归结为简单的指标，比如发表论文的数量或期刊影响力，可以<mark>节省</mark>大量时间和精力，并显著减少模糊性。", "r": "2019 · 英语一 · 阅读理解 C · 第 50 题"}]}, {"id": 3086, "w": "scandal", "f": 1, "m": "", "s": [{"d": "1. n. 丑闻（1）", "e": "But embarrassing <mark>scandals</mark> and the popularity of the republican left in the recent Euro-elections have forced him to eat his words and stand down.", "z": "但令人尴尬的<mark>丑闻</mark>，以及共和主义左派在最近欧洲议会选举中的受欢迎程度，迫使他收回自己的话并辞职。", "r": "2015 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3087, "w": "scarce", "f": 1, "m": "", "s": [{"d": "1. adj. 稀少的（1）", "e": "The idea that one might burn down an entire house just to reclaim the nails underlines how <mark>scarce</mark>, costly and valuable the simple-seeming technology was.", "z": "有人可能只为回收钉子而烧掉整栋房子，这一想法凸显出这种看似简单的技术当时是何等<mark>稀缺</mark>、昂贵而珍贵。", "r": "2024 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3088, "w": "scarcely", "f": 1, "m": "scarce（稀少的、不足的）+-ly（在这种程度上）", "s": [{"d": "1. adv. 几乎不（1）", "e": "These changes were gradual and at first <mark>scarcely</mark> visible.", "z": "这些变化是逐渐发生的，最初<mark>几乎不</mark>明显。", "r": "2015 · 英语一 · 阅读理解 C · 第 47、48 题"}]}, {"id": 3089, "w": "scarcity", "f": 1, "m": "scarc（scarce去e，稀少的、不足的）+ity（状态）", "s": [{"d": "1. n. 缺乏；稀缺（1）", "e": "[ A ] the <mark>scarcity</mark> of tree-ring research in the U.S.", "z": "[A] 美国树轮研究的<mark>匮乏</mark>。", "r": "2026 · 英语一 · 阅读理解 A Text 4 · 第 36 题 · 选项 A · 真题选项"}]}, {"id": 3090, "w": "scatter", "f": 1, "m": "", "s": [{"d": "1. v. 分散、散布（1）", "e": "The goals of the prize-givers seem as <mark>scattered</mark> as the criticism.", "z": "颁奖者的目标似乎和批评意见一样<mark>分散</mark>。", "r": "2014 · 英语一 · 阅读理解 A Text 3 · 第 31-35 题"}]}, {"id": 3091, "w": "scholarship", "f": 1, "m": "scholar（学者、学习研究者）+-ship（相关身份、活动或成果的名词结尾）", "s": [{"d": "1. n. 学术研究（1）", "e": "In 2010, leading congressional Democrats and Republicans sent letters to the AAAS asking that it identify actions that could be taken by &quot;federal, state and local governments, universities, foundations, educators, individual benefactors and others&quot; to &quot;maintain national excellence in humanities and social scientific <mark>scholarship</mark> and education.&quot;", "z": "2010年，国会民主党和共和党领袖致信美国艺术与科学院，要求其明确“联邦、州和地方政府、大学、基金会、教育工作者、个人捐助者及其他各方”可以采取哪些行动，以“维持国家在人文学科和社会科学<mark>学术研究</mark>及教育方面的卓越地位”。", "r": "2014 · 英语一 · 阅读理解 A Text 4 · 第 36-40 题"}]}, {"id": 3092, "w": "scold", "f": 1, "m": "", "s": [{"d": "1. v. 斥责（1）", "e": "In the 2006 film version of The Devil Wears Prada, Miranda Priestly, played by Meryl Streep, <mark>scolds</mark> her unattractive assistant for imagining that high fashion doesn&#x27;t affect her.", "z": "在2006年的电影版《穿普拉达的女王》中，梅丽尔·斯特里普饰演的米兰达·普里斯特利<mark>斥责</mark>她那位其貌不扬的助理，因为助理竟然以为高级时尚不会影响自己。", "r": "2013 · 英语一 · 阅读理解 A Text 1 · 第 21-25 题"}]}, {"id": 3093, "w": "scrap", "f": 1, "m": "", "s": [{"d": "1. v. 废弃,取消（1）", "e": "Many too are seeing the advantages of <mark>scrapping</mark> a degree requirement for certain roles.", "z": "许多人也开始看到<mark>取消</mark>某些职位学历要求的好处。", "r": "2022 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3094, "w": "scrape", "f": 1, "m": "", "s": [{"d": "1. v. 抓取网络数据（1）", "e": "But these open-source programs are built by <mark>scraping</mark> images from the Internet, often without permission and proper attribution to artists.", "z": "但这些开源程序是通过<mark>抓取</mark>互联网上的图像构建的，而<mark>抓取</mark>时往往未获得许可，也未恰当地注明艺术家署名。", "r": "2024 · 英语一 · 阅读理解 A Text 3 · 第 31-35 题"}]}, {"id": 3095, "w": "seal", "f": 1, "m": "", "s": [{"d": "1. n. 印章（1）", "e": "He was searching for tiny engraved <mark>seals</mark> attributed to the ancient Mycenaean culture that dominated Greece from the 1400s to 1200s BC.", "z": "他正在寻找归属于古迈锡尼文化的小型雕刻<mark>印章</mark>，这种文化在公元前1400至前1200年间主导着希腊。", "r": "2014 · 英语一 · 阅读理解 B · 第 41-45 题 · 选项 F · 真题选项"}]}, {"id": 3096, "w": "seed", "f": 1, "m": "", "s": [{"d": "1. n. 萌芽；根源（1）", "e": "Mental health is the <mark>seed</mark> that contains self-esteem -confidence in ourselves and an ability to trust in our common sense.", "z": "心理健康是一颗包含自尊的<mark>种子</mark>；自尊就是对自己的信心，以及相信自身常识的能力。", "r": "2016 · 英语一 · 阅读理解 C · 第 48 题"}]}, {"id": 3097, "w": "selective", "f": 1, "m": "select（选择、挑选）+-ive（具有这种性质或倾向的）", "s": [{"d": "1. adj. 招生严格的；录取择优的（1）", "e": "But now most colleges, save for many <mark>selective</mark> campuses, allow all undergraduates, and even graduate students, to get their low grades forgiven.", "z": "但如今，除许多<mark>招生严格的</mark>院校外，大多数大学都允许所有本科生，甚至研究生，将低分成绩不予计入。", "r": "2019 · 英语一 · 阅读理解 A Text 2 · 第 26-30 题"}]}, {"id": 3098, "w": "seminar", "f": 1, "m": "", "s": [{"d": "1. n. 研讨课、研讨会（1）", "e": "Ways of reading on a train or in bed are likely to differ considerably from reading in a <mark>seminar</mark> room.", "z": "在火车上或床上阅读的方式，很可能与在<mark>研讨课</mark>教室里阅读有相当大的不同。", "r": "2015 · 英语一 · 阅读理解 B · 第 41-45 题 · 选项 A · 真题选项"}]}, {"id": 3099, "w": "sensor", "f": 1, "m": "sens（感觉、感知）+-or（执行相应作用的装置）", "s": [{"d": "1. n. 传感器；感应器（1）", "e": "<mark>Sensor</mark> types are chosen to __17__ the different environments they are needed in.", "z": "选择<mark>传感器</mark>类型，是为了____其所需应用的不同环境。", "r": "2024 · 英语一 · 完形填空 · 第 1-20 题 · 完形原文"}]}, {"id": 3100, "w": "sensual", "f": 1, "m": "sens（感觉、感知）+-ual（具有相应性质的）", "s": [{"d": "1. adj. 感官的；感官享受的（1）", "e": "It might be poetic, philosophical, <mark>sensual</mark>, or mathematical, but in any case it must, in my view, have something to do with the soul of the human being.", "z": "它可能是诗意的、哲学的、<mark>感官的</mark>，或数学的，但无论如何，在我看来，它都必须与人的灵魂有关。", "r": "2014 · 英语一 · 阅读理解 C · 第 46 题"}]}];
+const STORAGE_KEY = 'kaoyan_momo_v1';
+let store = {};
+try { store = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { store = {}; }
+
+let mode = 'context'; // 'context' | 'list' | 'table'
+let filter = 'all';   // 'all' | '0' | '1' | '2' | '3' | 'review'
+let cloze = false;
+let revealed = false;
+let curIdx = 0;
+let filteredList = [...WORDS];
+let selectedIds = new Set();
+
+function showToast(msg) {
+  let t = document.getElementById('toast-box');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'toast-box';
+    t.className = 'toast';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function saveStore() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(store)); } catch(e) {}
+  updateStats();
+}
+
+function getStatus(id) {
+  return store[id] || 0; // 0:未标, 1:认识, 2:模糊, 3:不认识
+}
+
+function setStatus(id, st, advance = true) {
+  if (st === 0) delete store[id];
+  else store[id] = st;
+  saveStore();
+  if (mode === 'context') {
+    if (!revealed && st !== 1 && st !== 0) {
+      revealed = true;
+      renderContext();
+      return;
+    }
+    if (advance) nextWord();
+    else renderContext();
+  } else {
+    render();
+  }
+}
+
+function getVisibleList() {
+  const q = (document.getElementById('search-input')?.value || '').trim().toLowerCase();
+  return filteredList.filter(w => {
+    if (!q) return true;
+    return w.w.toLowerCase().includes(q)
+      || (w.m && w.m.toLowerCase().includes(q))
+      || w.s.some(s => s.d.toLowerCase().includes(q) || s.z.toLowerCase().includes(q) || s.e.toLowerCase().includes(q));
+  });
+}
+
+function toggleSelect(id, checked) {
+  if (checked) selectedIds.add(id);
+  else selectedIds.delete(id);
+  updateBatchBar();
+  const row = document.getElementById('wrow-' + id);
+  if (row) row.classList.toggle('selected-row', checked);
+}
+
+function selectAllVisible() {
+  const list = getVisibleList();
+  const allSelected = list.length > 0 && list.every(w => selectedIds.has(w.id));
+  if (allSelected) {
+    list.forEach(w => selectedIds.delete(w.id));
+  } else {
+    list.forEach(w => selectedIds.add(w.id));
+  }
+  render();
+}
+
+function invertSelectVisible() {
+  const list = getVisibleList();
+  list.forEach(w => {
+    if (selectedIds.has(w.id)) selectedIds.delete(w.id);
+    else selectedIds.add(w.id);
+  });
+  render();
+}
+
+function markSelected(st) {
+  const list = getVisibleList();
+  // 如果当前没有手动勾选任何词，则对当前筛选/搜索出的可见列表直接生效
+  const targets = selectedIds.size > 0
+    ? WORDS.filter(w => selectedIds.has(w.id))
+    : list;
+
+  if (!targets.length) {
+    showToast('当前列表没有可操作的单词');
+    return;
+  }
+  const labelMap = { 1: '✓ 认识(标熟)', 2: '? 模糊', 3: '✗ 不认识', 0: '待学习(重置)' };
+  targets.forEach(w => {
+    if (st === 0) delete store[w.id];
+    else store[w.id] = st;
+  });
+  selectedIds.clear();
+  saveStore();
+  render();
+  showToast(`已将 ${targets.length} 个单词一键设为「${labelMap[st]}」`);
+}
+
+function markRestUnlearnedAsKnown() {
+  const list = getVisibleList().filter(w => getStatus(w.id) === 0);
+  if (!list.length) {
+    showToast('当前列表没有「待学习」的单词');
+    return;
+  }
+  list.forEach(w => { store[w.id] = 1; });
+  selectedIds.clear();
+  saveStore();
+  render();
+  showToast(`⚡ 已将当前列表剩余 ${list.length} 个未标词全部一键标熟！`);
+}
+
+function updateBatchBar() {
+  const cntEl = document.getElementById('sel-cnt');
+  if (cntEl) cntEl.textContent = selectedIds.size;
+}
+
+function speak(text) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const clean = text.replace(/<[^>]+>/g, '');
+  const u = new SpeechSynthesisUtterance(clean);
+  u.lang = 'en-US';
+  u.rate = 0.95;
+  window.speechSynthesis.speak(u);
+}
+
+function applyFilter(newFilter) {
+  filter = newFilter;
+  document.querySelectorAll('.pill').forEach(el => {
+    el.classList.toggle('active', el.dataset.filter === filter);
+  });
+  filteredList = WORDS.filter(w => {
+    const st = String(getStatus(w.id));
+    if (filter === 'all') return true;
+    if (filter === 'review') return st === '2' || st === '3';
+    return st === filter;
+  });
+  curIdx = 0;
+  revealed = (mode !== 'context');
+  render();
+}
+
+function onSearchInput() {
+  if (mode === 'context') {
+    setMode('table');
+  } else {
+    render();
+  }
+}
+
+function updateStats() {
+  let c0 = 0, c1 = 0, c2 = 0, c3 = 0;
+  WORDS.forEach(w => {
+    const st = getStatus(w.id);
+    if (st === 1) c1++;
+    else if (st === 2) c2++;
+    else if (st === 3) c3++;
+    else c0++;
+  });
+  const total = WORDS.length || 1;
+  document.getElementById('prog-k').style.width = (c1 / total * 100) + '%';
+  document.getElementById('prog-v').style.width = (c2 / total * 100) + '%';
+  document.getElementById('prog-u').style.width = (c3 / total * 100) + '%';
+  document.getElementById('cnt-all').textContent = WORDS.length;
+  document.getElementById('cnt-0').textContent = c0;
+  document.getElementById('cnt-1').textContent = c1;
+  document.getElementById('cnt-2').textContent = c2;
+  document.getElementById('cnt-3').textContent = c3;
+  updateBatchBar();
+}
+
+function statusBadgeHTML(st) {
+  if (st === 1) return '<span class="status-badge st-1">✓ 已标熟</span>';
+  if (st === 2) return '<span class="status-badge st-2">? 模糊</span>';
+  if (st === 3) return '<span class="status-badge st-3">✗ 不认识</span>';
+  return '<span class="status-badge" style="border:1px solid var(--border);color:var(--sub)">待学习</span>';
+}
+
+function renderContext() {
+  const box = document.getElementById('main-view');
+  const dock = document.getElementById('bottom-dock');
+  dock.style.display = 'block';
+  const list = getVisibleList();
+  if (!list.length) {
+    box.innerHTML = `<div class="momo-card" style="text-align:center;padding:50px 20px;">
+      <h2 style="margin-bottom:10px;">🎉 当前筛选列表下没有单词啦！</h2>
+      <p style="color:var(--sub);margin-bottom:20px;">你可以切换到「全部」或其他分组继续背诵，或者前往下一单元。</p>
+      <button class="btn-chip active" onclick="applyFilter('all')">显示全部单词</button>
+    </div>`;
+    return;
+  }
+  if (curIdx >= list.length) curIdx = 0;
+  if (curIdx < 0) curIdx = list.length - 1;
+  const w = list[curIdx];
+  const st = getStatus(w.id);
+
+  const morphHTML = w.m ? `<div class="morph-box" onclick="revealMeaning()">
+    <span class="morph-label">构词拆解</span>
+    <span>${w.m}</span>
+  </div>` : '';
+
+  const sensesHTML = w.s.map(s => `
+    <div class="sense-item" onclick="if(!revealed) revealMeaning()">
+      <div class="en-sent">${s.e}</div>
+      <div class="reveal-box">
+        <div class="sense-def">${s.d}</div>
+        <div class="zh-sent">${s.z}</div>
+        <div class="src-tag">
+          <span>📖 ${s.r}</span>
+          <span class="speak-sent" onclick="event.stopPropagation();speak(${JSON.stringify(s.e)})">🔊 读例句</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  box.innerHTML = `
+    <div class="momo-card ${revealed ? '' : 'hidden-meaning'} ${cloze && !revealed ? 'cloze-mode' : ''}">
+      <div class="word-header">
+        <div class="word-title-wrap">
+          <span style="font-size:13px;font-weight:700;color:var(--sub);">#${w.id} (${curIdx + 1}/${list.length})</span>
+          <h1 class="word-title ${cloze && !revealed ? 'masked' : ''}" onclick="speak(${JSON.stringify(w.w)})">${w.w}</h1>
+          <button class="speak-btn" onclick="speak(${JSON.stringify(w.w)})">🔊 发音 [R]</button>
+        </div>
+        <div class="meta-badges">
+          <span class="freq-badge">🔥 真题考频 ${w.f} 次</span>
+          ${statusBadgeHTML(st)}
+        </div>
+      </div>
+      ${morphHTML}
+      <div style="margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:13px;font-weight:700;color:var(--sub);">🎯 真题语境先行（先读原句猜词义，点击卡片或按空格揭晓）</span>
+        <button class="btn-chip" onclick="toggleReveal()">${revealed ? '🙈 隐藏释义 [Space]' : '👀 显示释义 [Space]'}</button>
+      </div>
+      ${sensesHTML}
+      <div class="kbd-hint">快捷键：[Space] 显示/隐藏释义 · [1] 认识(标熟) · [2] 模糊 · [3] 不认识 · [←/→] 切换单词 · [R] 朗读单词</div>
+    </div>
+  `;
+}
+
+function renderList() {
+  const box = document.getElementById('main-view');
+  const dock = document.getElementById('bottom-dock');
+  dock.style.display = 'none';
+  const list = getVisibleList();
+
+  if (!list.length) {
+    box.innerHTML = `<div class="momo-card" style="text-align:center;padding:40px;">没有找到匹配的单词</div>`;
+    return;
+  }
+
+  box.innerHTML = `<div class="list-grid ${revealed ? '' : 'hidden-meaning'} ${cloze ? 'cloze-mode' : ''}">` + list.map(w => {
+    const st = getStatus(w.id);
+    const isSel = selectedIds.has(w.id);
+    return `<div class="list-card ${isSel ? 'selected-row' : ''}" id="wrow-${w.id}">
+      <div class="word-header" style="padding-bottom:10px;margin-bottom:12px;">
+        <div class="word-title-wrap" style="align-items:center;">
+          <input type="checkbox" class="chk-box" ${isSel ? 'checked' : ''} onchange="toggleSelect(${w.id}, this.checked)">
+          <span style="font-size:12px;color:var(--sub);font-weight:700;">#${w.id}</span>
+          <span class="word-title" style="font-size:24px;" onclick="speak(${JSON.stringify(w.w)})">${w.w}</span>
+          <button class="speak-btn" onclick="speak(${JSON.stringify(w.w)})">🔊</button>
+          <span class="freq-badge">考频 ${w.f}</span>
+          ${statusBadgeHTML(st)}
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <button class="btn-chip ${st===1?'btn-momo':''}" onclick="setStatus(${w.id},1,false)">✓ 标熟</button>
+          <button class="btn-chip ${st===2?'btn-amber':''}" onclick="setStatus(${w.id},2,false)">? 模糊</button>
+          <button class="btn-chip ${st===3?'btn-rose':''}" onclick="setStatus(${w.id},3,false)">✗ 不认识</button>
+        </div>
+      </div>
+      ${w.m ? `<div class="morph-box"><span class="morph-label">构词</span><span>${w.m}</span></div>` : ''}
+      ${w.s.map(s => `
+        <div class="sense-item" style="padding:12px 14px;margin-bottom:8px;" onclick="this.querySelector('.reveal-box').style.filter='none';this.querySelector('.reveal-box').style.opacity='1';">
+          <div class="en-sent" style="font-size:15.5px;">${s.e}</div>
+          <div class="reveal-box">
+            <span class="sense-def">${s.d}</span>
+            <div class="zh-sent">${s.z}</div>
+            <div class="src-tag"><span>📖 ${s.r}</span><span class="speak-sent" onclick="event.stopPropagation();speak(${JSON.stringify(s.e)})">🔊 读例句</span></div>
+          </div>
+        </div>
+      `).join('')}
+    </div>`;
+  }).join('') + `</div>`;
+}
+
+function renderTable() {
+  const box = document.getElementById('main-view');
+  const dock = document.getElementById('bottom-dock');
+  dock.style.display = 'none';
+  const list = getVisibleList();
+
+  if (!list.length) {
+    box.innerHTML = `<div class="momo-card" style="text-align:center;padding:40px;">没有找到匹配的单词</div>`;
+    return;
+  }
+
+  const allChecked = list.length > 0 && list.every(w => selectedIds.has(w.id));
+
+  box.innerHTML = `
+    <div class="quick-table-wrap">
+      <table class="quick-table">
+        <thead>
+          <tr>
+            <th style="width:36px;"><input type="checkbox" class="chk-box" ${allChecked ? 'checked' : ''} onchange="selectAllVisible()" title="全选当前列表"></th>
+            <th style="width:55px;">序号</th>
+            <th style="width:150px;">单词 (点击发音)</th>
+            <th style="width:70px;" class="hide-sm">考频</th>
+            <th>已考词义 & 真题语境首句</th>
+            <th style="width:210px;text-align:right;">快速标记 / 一键标熟</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${list.map(w => {
+            const st = getStatus(w.id);
+            const isSel = selectedIds.has(w.id);
+            const defs = w.s.map(s => s.d).join('；');
+            const firstEn = w.s[0] ? w.s[0].e : '';
+            return `<tr id="wrow-${w.id}" class="${isSel ? 'selected-row' : ''}">
+              <td><input type="checkbox" class="chk-box" ${isSel ? 'checked' : ''} onchange="toggleSelect(${w.id}, this.checked)"></td>
+              <td style="color:var(--sub);font-weight:700;font-size:12px;">#${w.id}</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <strong style="font-size:16.5px;cursor:pointer;color:var(--text);" onclick="speak(${JSON.stringify(w.w)})">${w.w}</strong>
+                  <span style="cursor:pointer;font-size:12px;color:var(--momo-dark);" onclick="speak(${JSON.stringify(w.w)})">🔊</span>
+                </div>
+                ${w.m ? `<div style="font-size:11.5px;color:var(--sub);margin-top:2px;">${w.m}</div>` : ''}
+              </td>
+              <td class="hide-sm"><span class="freq-badge">${w.f}次</span></td>
+              <td>
+                <div style="font-weight:600;color:var(--mark-text);font-size:13.5px;margin-bottom:3px;">${defs}</div>
+                <div style="font-size:12.5px;color:var(--sub);line-height:1.4;">${firstEn}</div>
+              </td>
+              <td style="text-align:right;white-space:nowrap;">
+                <button class="btn-chip ${st===1?'btn-momo':''}" style="padding:4px 9px;font-size:12px;" onclick="setStatus(${w.id},1,false)">✓ 熟</button>
+                <button class="btn-chip ${st===2?'btn-amber':''}" style="padding:4px 9px;font-size:12px;" onclick="setStatus(${w.id},2,false)">? 模</button>
+                <button class="btn-chip ${st===3?'btn-rose':''}" style="padding:4px 9px;font-size:12px;" onclick="setStatus(${w.id},3,false)">✗ 生</button>
+              </td>
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function render() {
+  updateStats();
+  if (mode === 'context') renderContext();
+  else if (mode === 'list') renderList();
+  else renderTable();
+}
+
+function toggleReveal() {
+  revealed = !revealed;
+  render();
+}
+function revealMeaning() {
+  if (!revealed) { revealed = true; renderContext(); }
+}
+function prevWord() {
+  const list = getVisibleList();
+  if (!list.length) return;
+  curIdx = (curIdx - 1 + list.length) % list.length;
+  revealed = false;
+  renderContext();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function nextWord() {
+  const list = getVisibleList();
+  if (!list.length) return;
+  curIdx = (curIdx + 1) % list.length;
+  revealed = false;
+  renderContext();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function setMode(m) {
+  mode = m;
+  revealed = (m !== 'context');
+  document.getElementById('mode-ctx').classList.toggle('active', m === 'context');
+  document.getElementById('mode-lst').classList.toggle('active', m === 'list');
+  document.getElementById('mode-tbl').classList.toggle('active', m === 'table');
+  render();
+}
+function toggleCloze() {
+  cloze = !cloze;
+  document.getElementById('btn-cloze').classList.toggle('active', cloze);
+  render();
+}
+function shuffleWords() {
+  for (let i = filteredList.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [filteredList[i], filteredList[j]] = [filteredList[j], filteredList[i]];
+  }
+  curIdx = 0;
+  revealed = false;
+  render();
+}
+function toggleTheme() {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('kaoyan_theme', next);
+}
+
+window.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  const list = getVisibleList();
+  if (mode !== 'context' || !list.length) return;
+  const w = list[curIdx];
+  if (e.code === 'Space') { e.preventDefault(); toggleReveal(); }
+  else if (e.key === '1') { e.preventDefault(); setStatus(w.id, 1, true); }
+  else if (e.key === '2') { e.preventDefault(); setStatus(w.id, 2, true); }
+  else if (e.key === '3') { e.preventDefault(); setStatus(w.id, 3, true); }
+  else if (e.key === 'ArrowLeft') { e.preventDefault(); prevWord(); }
+  else if (e.key === 'ArrowRight') { e.preventDefault(); nextWord(); }
+  else if (e.key.toLowerCase() === 'r') { e.preventDefault(); speak(w.w); }
+});
+
+(function init() {
+  const savedTheme = localStorage.getItem('kaoyan_theme');
+  if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+  render();
+})();
+
+</script>
+</body>
+</html>
